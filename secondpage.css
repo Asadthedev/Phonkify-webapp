@@ -1,0 +1,416 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    
+}
+
+.first-container {
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 10px 20px rgb(8, 8, 8);
+}
+#search-input{
+    height: 40px;
+    border-radius: 8px;
+}
+#search-button{
+    height: 43px;
+    border-radius: 5px;
+    width: 90px;
+    border: 0;
+    background-color: rgb(212, 62, 3);
+    color: white;
+    font-size: 20px;
+}
+.first-container input {
+    height: 30px;
+    width: 300px;
+}
+
+.more-playlist{
+    border-radius: 7px;
+    width: 90px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.more-hider{
+    display: none;
+}
+
+
+.current-song-viewer {
+    margin-top: 20px;
+    background-color: rgb(27, 27, 27);
+    padding: 10px;
+    width: 100%;
+    min-height: 400px; /* Set the minimum height to 100px */
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    flex: 3;
+}
+
+ 
+.boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* Adjust as needed */
+    align-items: center;
+    transition: transform 0.5s ease; /* Add a smooth transition */
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    transition: 0.6s;
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Enable snapping behavior */
+}
+
+
+
+.phonk-box {
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.7); 
+    margin-top: 35px;
+    margin-right: auto; /* Add margin-right:auto to push it to the left */
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    width: 96px;
+    height: 200px;
+    position: relative;
+    border-radius: 8px;
+    background-image: url('phonks\ cover.webp');
+    background-position: center center;
+    background-size: cover;
+    margin-right: 10px;
+    flex: 0 0 100px;
+    margin-bottom: 30px; 
+}
+.slowed-reverb {
+    margin-top: 35px;
+    margin-left: auto; /* Add margin-right:auto to push it to the left */
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    width: 96px;
+    height: 200px;
+    position: relative;
+    border-radius: 8px;
+    background-image: url('slowed\ reverb\ cover.jpg');
+    background-position: center center;
+    background-size: cover;
+    margin-right: 10px;
+    margin-left: 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.7); 
+    flex: 0 0 100px;
+    margin-bottom: 30px; 
+}
+
+.hardcore-box {
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.7); 
+    margin-right: 4px;
+    margin-top: 35px;
+    margin-left: auto; /* Add margin-right:auto to push it to the left */
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    width: 96px;
+    height: 200px;
+    position: relative;
+    border-radius: 8px;
+    background-image: url('hard\ style\ cover.jpg');
+    background-position: center center;
+    background-size: cover;
+    flex: 0 0 100px;
+    margin-bottom: 30px; 
+}
+
+
+.playlist-left {
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.7);
+    background-color: rgb(255, 251, 251);
+    padding: 58px;
+    width: 100px;
+    border-radius: 8px;
+    margin: 0 5px; /* Add margin to create spacing between boxes */
+    transition: 1s;
+    transform: translateX(100%);
+    margin-right: -100px;
+    background-image: url('your\ playlist\ cover.jpg');
+    background-position: center center;
+    background-size: cover;
+}
+.playlist-new {
+    position: relative;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.7);
+    background-color: rgb(255, 251, 251);
+    padding: 58px;
+    width: 100px;
+    border-radius: 8px;
+    margin: 0 5px;
+    transition: 1s;
+    transform: translateX(100%);
+    margin-right: -100px;
+    background-image: url('extra\ playlist.jfif');
+    background-position: center center;
+    background-size: cover;
+}
+
+.PL-delete {
+    position: absolute;
+    top: 0; /* Place it at the top of the playlist-new */
+    left: 50%; /* Center it horizontally within the playlist-new */
+    transform: translateX(-50%); /* Adjust for centering */
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    width: 70px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+/* Styling to hide the new playlist box */
+.hidden {
+    display: none;
+}
+
+
+
+.extra-playlist-text {
+    position: absolute;
+    bottom: 5px; /* Adjust this value for spacing */
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    /* Add background to make text readable */
+    padding: 5px 15px; /* Add padding for visibility */
+    border-radius: 5px;
+    font-weight: bold;
+}
+.phonk-text {
+    position: absolute;
+    bottom: 5px; /* Adjust this value for spacing */
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    /* Add background to make text readable */
+    padding: 5px 15px; /* Add padding for visibility */
+    border-radius: 5px;
+    font-weight: bold;
+}
+.slowed-text {
+    position: absolute;
+    bottom: 5px; /* Adjust this value for spacing */
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+   /* Add background to make text readable */
+    padding: 5px 15px; /* Add padding for visibility */
+    border-radius: 5px;
+    font-weight: bold;
+}
+.hardcore-text {
+    position: absolute;
+    bottom: 5px; /* Adjust this value for spacing */
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    /* Add background to make text readable */
+    padding: 5px 15px; /* Add padding for visibility */
+    border-radius: 5px;
+    font-weight: bold;
+}
+.song-lists {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    background-color: rgb(37, 37, 37);
+    padding: 10px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 10px 20px rgb(8, 8, 8);
+    height: auto; /* Adjust the height to auto to fit the content */
+    height: auto;
+}
+
+/* Style for the song list */
+.song-container {
+    margin-top: 10px; /* Adjust the margin-top to create space between songs */
+    border: 0;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Add shadow in all directions */
+    height: 70px;
+    width: 300px;
+    list-style-type: none; /* Remove the bullet point */
+    display: flex;
+    align-items: center;
+    color: rgb(254, 255, 255);
+    background-size: cover; /* Make the background image fit */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.song-container:hover{
+    transform: scale(1.1);
+    transition: 0.4s;
+}
+.hidden{
+    display: none;
+}
+#audio-player{
+    height: 70px;
+    width: 100%; /* Adjust width to fill the container */
+    position: fixed;
+    bottom: 0; /* Keep it at the bottom of the page */
+    background-color: rgb(43, 40, 41); /* Set background color to black */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Add top border */
+    padding: 10px; /* Add padding to create edges */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+    color: white; /* Set text color to white */
+    text-align: center; /* Center the text */
+
+    
+}
+
+/* Rest of your styling */
+
+/* Add this CSS to your styles */
+/* Style for the t/* Style for the three dots button */
+.dots-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    /* Align the button to the right */
+    margin-top: -20px; /* Adjust the margin-top as needed */
+    transform: rotate(90deg); /* Rotate the button 90 degrees */
+    transform-origin: center center; /* Rotate around the center */
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: block;
+    margin: 2px auto;
+    margin: 0 2px;
+}
+
+/* Style the dots button when it's hovered */
+.dots-button:hover .dot {
+    background-color: #555;
+}
+
+/* Rest of your styling */
+
+/* Style for the three dots button */
+.dots-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    /* Align the button to the right */
+    margin-top: -20px; /* Adjust the margin-top as needed */
+    transform: rotate(90deg); /* Rotate the button 90 degrees */
+    transform-origin: center center; /* Rotate around the center */
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: block;
+    margin: 2px auto;
+    margin: 0 2px;
+}
+
+/* Style the dots button when it's hovered */
+.dots-button:hover .dot {
+    background-color: #555;
+}
+
+.additional-options {
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 320px; /* Adjust the width as needed */
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    bottom: 0;
+    height: 300px;
+    width: 100%;
+    right: 0; /* Align to the right edge */
+    margin: 0px; /* Add some margin for spacing */
+    padding: 10px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.playlist-add {
+    border-radius: 5px;
+    width: 310px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    margin-left: 7%;
+    margin-top: 10px; /* Add margin on top */
+}
+
+.playlist-add:hover {
+    transition: 0.4s;
+    transform: scale(0.9);
+}
+
+.dropdown {
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+/* Push the dropdown to the right */
+    margin-top: 10px; 
+    height: 40px;
+    margin-left: 25%;/* Add some space between the button and dropdown */
+}

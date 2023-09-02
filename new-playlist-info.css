@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body {
+    background-color: rgb(41, 40, 40);
+    display: flex; /* Adding flex display to body */
+    justify-content: center; /* Center aligns content horizontally */
+    align-items: center; /* Center aligns content vertically */
+    min-height: 100vh; /* Makes sure the content takes at least the full viewport height */
+}
+.input-data {
+    text-align: center; /* Center-align the content inside .input-data */
+    color: white;
+}
+.name-input{
+    width: 250px; /* Adjust the width to your desired value */
+    padding: 5px; 
+    border-radius: 5px;
+
+}
+
+.create{
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+}
+.create:hover{
+    transform: scale(1.1);
+    transition: 0.4s;
+}
+

@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+}
+body{
+    background-color: rgb(17, 17, 17);
+}
+.cover {
+    margin-top: -100px;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    width: 100%;
+    height: 250px;
+    position: relative;
+    border-radius: 8px;
+    background-image: url('extra\ playlist.jfif');
+    background-position: center center;
+    background-size: cover;
+}
+
+#text{
+    color: wheat;
+    font-size: 100px;
+}
+
+.phonk{
+
+    color: white;
+    font-size: 20px;
+    margin-top: 30px; /* Adjust the margin-top to create space between songs */
+    border: 0;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    background-color: rgb(10, 10, 10);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Add shadow in all directions */
+    height: 80px;
+    width: 100%;
+    list-style-type: none; /* Remove the bullet point */
+    display: flex;
+    align-items: center;
+    background-image: url('extra\ playlist\ songs\ sp\ cover.jfif');
+    background-size: cover; /* Make the background image fit */
+}
+.phonk:hover{
+    transform: scale(0.9);
+    transition: 0.4s;
+}
+.hidden{
+    display: none;
+}
+#audio-bar{
+    height: 70px;
+    width: 100%; /* Adjust width to fill the container */
+    position: fixed;
+    bottom: 0; /* Keep it at the bottom of the page */
+    background-color: rgb(43, 40, 41); /* Set background color to black */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Add top border */
+    padding: 10px; /* Add padding to create edges */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+    color: white; /* Set text color to white */
+    text-align: center; /* Center the text */
+
+    
+}
+
+.phonk-text {
+    position: absolute;
+    bottom: 100px; /* Adjust this value for spacing */
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-weight: bold;
+   /* Add background to make text readable */
+    padding: 5px 15px; /* Add padding for visibility */
+    border-radius: 5px;
+    width: 140px;
+    height: 50px;
+}
+.delete-butt{
+    margin-left: 60px;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+}

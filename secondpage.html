@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Songs</title>
+    <link rel="stylesheet" href="secondpage.css">
+</head>
+
+<body>
+    <div class="first-container">
+        <input type="text" id="search-input" placeholder="Search for a song">
+        <button id="search-button">Search</button>
+    </div>
+    <div class="more-playlist-div"><button class="more-playlist" id="more-playlist">Add playlist</button></div>
+    <div class="current-song-viewer">
+        <div class="boxes" id="boxes">
+            <div class="phonk-box" id="phonk-playlist">
+                <p class="phonk-text">Phonks</p>
+
+            </div>
+            <div class="slowed-reverb" id="slowed">
+                <p class="slowed-text">Slowed reverb</p>
+            </div>
+            <div class="hardcore-box" id="hardstyle">
+                <p class='hardcore-text'>Audio edits</p>
+            </div>
+            <div>
+               
+                </div>
+                
+            </div>
+            <div class="playlist-box" id="playlist-container">
+
+            </div>
+        </div>
+        <p id="current-song"></p>
+        <audio id="audio-player" class="hidden" controls></audio>
+
+    </div>
+
+    <div class="song-lists">
+        <div class="song-lists">
+            <div id="song-list">
+
+            </div>
+            <div  id="song-options"></div>
+        </div>
+       
+
+    </div>
+    <script src="playlistsongs.js"></script>
+    <script src="secondpage.js"></script>
+
+</body>
+
+</html>
